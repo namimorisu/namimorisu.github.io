@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: large;
+  font-family: 'Arial', sans-serif;
+  margin: 0px;
+  background-color: #116178;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+
+body * {
+  position: relative;
+  z-index: 2;
+}
+
+.loginArea {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 600px;
+  height: 350px;
+  background-color: #48d1cc;
+  border: 1px solid black;
+  border-radius: 100px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 40px;
+}
+
+.usernameBox input,
+.passwordBox input,
+#submitButton {
+  width: 300px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+#submitButton {
+  width: 300px; 
+  padding: 10px;
+  margin-top: 8px; 
+  font-size:medium;
+  background-color: #48d1cc;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submitButton:hover {
+  background-color: #3371a1;
+}
+
+@media screen and (max-width: 768px) {
+  .loginArea {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+#nav {
+  display: none;
+  align-items: center;
+  justify-content: right;
+  height: 75px;
+  background-color: #48d1cc; 
+  margin: 0 auto;
+  padding-right: 20px; 
+}
+
+#logoutButton {
+  margin: 25px;
+  width: 150px;
+  height: 40px;
+  background-color: #48d1cc; 
+  border: none;
+  border-radius: 15px;
+  font-size: large;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+#app {
+  top: 50%;
+  bottom: 50%;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+.nameBox, .auditRatioBox, .auditReceivedBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(48%);
+  height: 350px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: #48d1cc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auditReceivedBox {
+  flex-basis: 100%;
+  margin: 20px;
+  height: 350px;
+}
+
+@media (max-width: 768px) {
+  .nameBox, .auditRatioBox {
+      flex-basis: 100%;
+  }
+}
